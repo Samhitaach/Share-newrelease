@@ -1,0 +1,47 @@
+public class testfire
+{
+WebDriver driver=NULL;
+@BeforeMethod
+public void setup() throws exception
+{ 
+system.setProperty("webdriver.chrome.driver","//user//drivers//Chromedriver.exe");
+driver= new ChromeDriver
+driver.manage().window().maximize();
+driver.manage().timeouts().implicitlywait(30,timeunit.SECONDS);
+}
+
+@AfterMethod
+public void closesession
+{
+driver.quit
+}
+   @Test(dataProvider = "getData")
+    public void loginTestfire(String username, String password) {
+    
+        driver.get("http://testfire.net/index.jsp");
+        driver.findElement(By.linktext("ONLINE BANKING LOGIN"));
+        driver.findElement(By.xpath(//input[@id="uid"])).sendkeys(username);
+        driver.findElement(By.xpath(//input[@id="passw"])).sendkeys(password);
+        System.out.println("UserName : " + username);
+        System.out.println("Password : " + password);
+  }
+  @DataProvider
+    public Object[][] getData() {
+
+        Object[][] data = new Object[2][2];
+
+        // valid credentials
+        data[0][0] = "admin";
+        data[0][1] = "admin";
+
+        // invalid credentials
+        data[1][0] = "demo_user";
+        data[1][1] = "demo_password";
+
+        return data;
+    }
+}
+public static void main(String[] args)
+{
+
+}
