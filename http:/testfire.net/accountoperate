@@ -10,11 +10,7 @@ driver.manage().window().maximize();
 driver.manage().timeouts().implicitlywait(30,timeunit.SECONDS);
 }
 
-@AfterMethod
-public void closesession
-{
-driver.quit
-}
+
    @Test(dataProvider = "getData")
     public void loginTestfire(String username, String password) {
     
@@ -22,14 +18,12 @@ driver.quit
         driver.findElement(By.linktext("ONLINE BANKING LOGIN")).click();
         driver.findElement(By.xpath(//input[@id="uid"])).sendkeys(username);
         driver.findElement(By.xpath(//input[@id="passw"])).sendkeys(password);
-        System.out.println("UserName : " + username);
-        System.out.println("Password : " + password);
-        
+        driver.findElement(By.xpath(//input[@id="btnGetAccount"])).submit();
         driver.findElement(By.linktext("View Account Summary"));
         Webelement el = driver.findElement(By.xpath(//*[@id="listAccounts"]))
         Select ob = new Select(el);
         ob.SelectByValue(800001);
-        driver.findElement(By.xpath(//input[@id="btnGetAccount"])).submit();
+        driver.findElement(By.xpath(//input[@id="btnSubmit"])).submit();
         WebElement accheading = driver.findElements(By.tagName("h1")) ;
         String ExpectedText = “Account History - 800001 Checking”;
 Assert.assertEquals(ExpectedText, accheading.getText());
@@ -54,7 +48,12 @@ System.out.println(“Account last transaction from table– Assert passed”);
  driver.findElement(By.linktext("Contact Us")).click(); 
  driver.findElement(By.linktext("online form)).click(); 
  driver.findElement(By.xpath(//input[@name="name"])).sendkeys("Admin User");
-driver.findElement(By.xpath(//input[@name="name"])).sendkeys("Admin User");
+driver.findElement(By.xpath(//input[@name="email_addr"])).sendkeys("Admin User");
+driver.findElement(By.xpath(//input[@name="subject"])).sendkeys("Admin Transaction");
+driver.findElement(By.xpath(//input[@name="comments"])).sendkeys("Good experience");
+driver.findElement(By.xpath(//input[@value="Submit"])).submit();
+driver.findElement(By.linktext("Sign Off")).click();  
+
   }
   @DataProvider
     public Object[][] getData() {
@@ -68,5 +67,10 @@ driver.findElement(By.xpath(//input[@name="name"])).sendkeys("Admin User");
         return data;
     }
 
+@AfterMethod
+public void closesession
+{
+driver.quit
+}
 
 }
