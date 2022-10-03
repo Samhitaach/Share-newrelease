@@ -40,8 +40,6 @@ driver.quit
 
         return data;
     }
-}
-public static void main(String[] args)
-{
+
 
 }
