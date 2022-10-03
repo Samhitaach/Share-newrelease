@@ -1,4 +1,4 @@
-public class testfire
+public class testfirelogin
 {
 WebDriver driver=NULL;
 @BeforeMethod
@@ -17,6 +17,7 @@ driver.manage().timeouts().implicitlywait(30,timeunit.SECONDS);
         driver.findElement(By.linktext("ONLINE BANKING LOGIN")).click();
         driver.findElement(By.xpath(//input[@id="uid"])).sendkeys(username);
         driver.findElement(By.xpath(//input[@id="passw"])).sendkeys(password);
+        driver.findElement(By.xpath(//input[@id="btnGetAccount"])).submit();
         System.out.println("UserName : " + username);
         System.out.println("Password : " + password);
   }
