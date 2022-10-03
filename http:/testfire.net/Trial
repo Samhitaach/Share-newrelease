@@ -10,16 +10,11 @@ driver.manage().window().maximize();
 driver.manage().timeouts().implicitlywait(30,timeunit.SECONDS);
 }
 
-@AfterMethod
-public void closesession
-{
-driver.quit
-}
    @Test(dataProvider = "getData")
     public void loginTestfire(String username, String password) {
     
         driver.get("http://testfire.net/index.jsp");
-        driver.findElement(By.linktext("ONLINE BANKING LOGIN"));
+        driver.findElement(By.linktext("ONLINE BANKING LOGIN")).click();
         driver.findElement(By.xpath(//input[@id="uid"])).sendkeys(username);
         driver.findElement(By.xpath(//input[@id="passw"])).sendkeys(password);
         System.out.println("UserName : " + username);
@@ -40,6 +35,10 @@ driver.quit
 
         return data;
     }
-
+@AfterMethod
+public void closesession
+{
+driver.quit
+}
 
 }
