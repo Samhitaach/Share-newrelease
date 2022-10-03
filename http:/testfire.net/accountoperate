@@ -1,0 +1,72 @@
+public class testfire
+{
+WebDriver driver=NULL;
+@BeforeMethod
+public void setup() throws exception
+{ 
+system.setProperty("webdriver.chrome.driver","//user//drivers//Chromedriver.exe");
+driver= new ChromeDriver
+driver.manage().window().maximize();
+driver.manage().timeouts().implicitlywait(30,timeunit.SECONDS);
+}
+
+@AfterMethod
+public void closesession
+{
+driver.quit
+}
+   @Test(dataProvider = "getData")
+    public void loginTestfire(String username, String password) {
+    
+        driver.get("http://testfire.net/index.jsp");
+        driver.findElement(By.linktext("ONLINE BANKING LOGIN")).click();
+        driver.findElement(By.xpath(//input[@id="uid"])).sendkeys(username);
+        driver.findElement(By.xpath(//input[@id="passw"])).sendkeys(password);
+        System.out.println("UserName : " + username);
+        System.out.println("Password : " + password);
+        
+        driver.findElement(By.linktext("View Account Summary"));
+        Webelement el = driver.findElement(By.xpath(//*[@id="listAccounts"]))
+        Select ob = new Select(el);
+        ob.SelectByValue(800001);
+        driver.findElement(By.xpath(//input[@id="btnGetAccount"])).submit();
+        WebElement accheading = driver.findElements(By.tagName("h1")) ;
+        String ExpectedText = “Account History - 800001 Checking”;
+Assert.assertEquals(ExpectedText, accheading.getText());
+System.out.println(“Account heading for 800001 Checking– Assert passed”);
+ driver.findElement(By.linktext("Transfer Funds")).click();  
+  Webelement toacc = driver.findElement(By.xpath(//*[@id="listAccounts"]))
+        Select ob = new Select(toacc);
+        ob.SelectByValue(800001);
+        driver.findElement(By.xpath(//input[@id="transferAmount"])).sendkeys("9876")
+        WebElement trmessage =  driver.findElement(By.xpath(//span[@style="color: Red"])) ;
+        String Expmess = “9876.0 was successfully transferred from Account 800000 into Account 800001”;
+Assert.assertEquals(Expmess, trmessage.getText());
+System.out.println(“Transfer amount– Assert passed”);
+driver.findElement(By.linktext("View Recent Transactions")).click();
+String dep = “$9876.00”;
+String wid = “-$9876.00”;
+String deposit = driver.findElement(By.xpath(".//*[@id='_ctl0__ctl0_Content_Main_MyTransactions']//td[contains('$9876.00')]")).getText();
+String withdrawal = driver.findElement(By.xpath(".//*[@id='_ctl0__ctl0_Content_Main_MyTransactions']//td[contains('-$9876.00')]")).getText();
+Assert.assertEquals(dep, deposit.getText());
+Assert.assertEquals(wid, withdrawal.getText());
+System.out.println(“Account last transaction from table– Assert passed”);
+ driver.findElement(By.linktext("Contact Us")).click(); 
+ driver.findElement(By.linktext("online form)).click(); 
+ driver.findElement(By.xpath(//input[@name="name"])).sendkeys("Admin User");
+driver.findElement(By.xpath(//input[@name="name"])).sendkeys("Admin User");
+  }
+  @DataProvider
+    public Object[][] getData() {
+
+        Object[][] data = new Object[1][1];
+
+        // valid credentials
+        data[0][0] = "admin";
+        data[0][1] = "admin";
+
+        return data;
+    }
+
+
+}
