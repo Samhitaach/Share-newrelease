@@ -39,7 +39,21 @@ Implement Agile
 • 	Automate regression and smoke tests to keep pace with sprints.
 
 Teams assign story points relative to work complexity, the amount of work, and risk or uncertainty. Values are assigned to more effectively break down work into smaller pieces, so they can address uncertainty.
+
 In Scrum and other Agile project management frameworks, velocity serves as an Agile metric used to estimate the amount of work a Scrum team can complete within a specific time frame, typically a single sprint. 
+A typical Agile velocity example involves tracking the number of story points completed by a team in each sprint, then calculating the average to predict future capacity.
+
+Example: Calculating Velocity
+Sprint 1: Team completes 4 out of 8 user stories, each worth 3 points. Total = 12 story points.
+
+Sprint 2: Team completes 7 user stories, each worth 5 points. Total = 35 story points.
+
+Sprint 3: Team completes 7 user stories, each worth 4 points. Total = 28 story points.
+
+Average Velocity = (12 + 35 + 28) / 3 = 25 story points per sprint.
+
+This average helps teams forecast how much work they can realistically commit to in upcoming sprints and is a foundational metric for Agile planning and predictability. Only fully completed stories are considered; partially completed work is not counted.
+
 
 Cycle Time
 Definition: The amount of time it takes for a work item to move from the start of active development to completion.
