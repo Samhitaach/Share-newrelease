@@ -37,3 +37,23 @@ Implement Agile
 • 	Shift-left testing: QA joins from sprint planning, not just post-dev.
 • 	Use BDD (Behavior-Driven Development) for clearer test cases.
 • 	Automate regression and smoke tests to keep pace with sprints.
+
+Teams assign story points relative to work complexity, the amount of work, and risk or uncertainty. Values are assigned to more effectively break down work into smaller pieces, so they can address uncertainty.
+In Scrum and other Agile project management frameworks, velocity serves as an Agile metric used to estimate the amount of work a Scrum team can complete within a specific time frame, typically a single sprint. 
+
+Cycle Time
+Definition: The amount of time it takes for a work item to move from the start of active development to completion.
+
+Measurement: Cycle time is tracked per user story, bug, or task. Shorter cycle times mean faster delivery and improved flow.
+
+Usage: Reveals process bottlenecks and helps optimize team workflow for faster delivery.
+
+Defect Rate
+Definition: The rate at which defects are identified in the product, indicating software quality.
+
+Measurement: Calculated as the number of defects found divided by the number of testable units (e.g., user stories, lines of code, sprints).
+
+Usage: Monitoring the defect rate highlights areas needing quality improvement and the effectiveness of the testing strategy.
+
+Tracking these metrics provides actionable insights for continuous improvement, better forecasting, and enhanced product quality within Agile teams.
+
