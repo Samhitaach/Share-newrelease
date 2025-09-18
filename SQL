@@ -1,0 +1,2 @@
+How to find the second highest salary from a table?
+SELECT MAX(Salary) FROM Employee WHERE Salary < (SELECT MAX(Salary) FROM Employee);
