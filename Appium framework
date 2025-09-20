@@ -1,0 +1,15 @@
+Appium framework:
+The client sends http requests to appium server defining desired capabilities and commands. Appium server interpret request translates into action and execute on device or emulator
+Appium relies on JSON WIRE PROTOCOL OR NEWER WEBDRIVER PROTOCOL. These protocol ensures seemless communication between testing sripts and automation engine, facilitates effective test execution
+
+On Android
+In Android devices appium uses UIAutomator2 driver to interact with UI elements. The ui aUTOMATOR2 DRIVER can automate complex gestures and handle level interactions on different Android versions.
+The user writes test commands which is coverted to JSON Object format. These JSON Object formatted command is send to Appium server. Appium employs webdriver protocol to communicate with the device. 
+In andriod device, the bootstrap.jar component process these requests and uses UIAutomator2 framework to interpret and executes UI interacts specified in commands.
+The interpreted tests are executed on the Android device, carrying out actions such as tapping buttons, entering text, or swiping screens.
+After which, the outcomes of these tests, along with any relevant data, are sent back to the Appium server by the Bootstrap.jar component.
+Finally, the Appium server transmits these results back to the user's client.
+On IOS:
+    It uses XCUItest framework. Above points same except bootstrap.jar, ios device has webdriver agent app which receives and processes requests. It extract them from IPA file. 
+After which the results are sent to the Appium server by the WebDriverAgent.app.
+Then, the Appium server transmits these results back to the user's client, where they can be displayed, analyzed, or utilized as needed.
