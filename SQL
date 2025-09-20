@@ -1,2 +1,36 @@
 How to find the second highest salary from a table?
 SELECT MAX(Salary) FROM Employee WHERE Salary < (SELECT MAX(Salary) FROM Employee);
+
+How to Fetch Employees Earning More Than the Average Salary
+To find employees with a salary greater than the average:
+
+sql
+SELECT *
+FROM Employee
+WHERE Salary > (SELECT AVG(Salary) FROM Employee);
+
+SELECT ColumnName, COUNT(*)
+FROM TableName
+GROUP BY ColumnName
+HAVING COUNT(*) > 1;
+
+SELECT employees.name, departments.name
+FROM employees
+INNER JOIN departments
+ON employees.department_id = departments.id;
+
+SELECT employees.name, departments.name
+FROM employees
+LEFT JOIN departments
+ON employees.department_id = departments.id;
+
+SELECT employee_name, salary,
+       ROW_NUMBER() OVER (ORDER BY salary DESC) AS row_num
+FROM employees;
+This numbers employees by salary descending, with no duplicates in row numbers even if salaries tie; for example, tied salaries get distinct row numbers.
+No Gaps in ranking. Pagination, unique row IDs
+
+SELECT employee_name, salary,
+       RANK() OVER (ORDER BY salary DESC) AS rank_num
+FROM employees;
+ tied salaries share the same rank, and the next rank skips accordingly (e.g., 1, 2, 2, 4).The  ties get same rank. Yes,Gaps in ranking since ranks after ties skip.
