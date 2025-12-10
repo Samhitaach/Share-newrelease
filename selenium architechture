@@ -1,0 +1,37 @@
+Structure of Selenium
+1
+Selenium is a widely used tool for automating web browsers. Its architecture is designed to provide flexibility, scalability, and compatibility for test automation. Selenium WebDriver, the core component, follows a client-server model and has evolved significantly from Selenium 3 to Selenium 4.
+
+Selenium 3 Architecture
+
+The Selenium 3 WebDriver architecture uses the JSON Wire Protocol for communication between the client and the browser. Here's how it works:
+
+Selenium Client Library: Provides language-specific bindings (e.g., Python, Java) to write test scripts. These scripts send commands to the WebDriver.
+
+JSON Wire Protocol: Converts commands into JSON format and sends them over HTTP to the browser driver.
+
+Browser Drivers: These are executable files (e.g., ChromeDriver, GeckoDriver) that translate JSON commands into browser-specific actions.
+
+Real Browsers: The browser executes the commands as if a user is interacting with it, enabling automation of tasks like clicking, form filling, and navigation.
+
+Selenium 4 Architecture
+
+Selenium 4 introduces the W3C WebDriver Protocol, replacing the JSON Wire Protocol. This change improves compatibility, stability, and performance across browsers. The key components remain similar but with enhanced functionality:
+
+Selenium Client Library: Still provides APIs for writing test scripts in various languages.
+
+W3C WebDriver Protocol: Standardizes communication between the client and browser, ensuring better cross-browser compatibility.
+
+Browser Drivers: Continue to act as intermediaries between the WebDriver and browsers, but now leverage the W3C protocol for communication.
+
+Real Browsers: Perform the automation tasks as directed by the WebDriver, ensuring seamless interaction with modern web technologies.
+
+Key Differences Between Selenium 3 and Selenium 4
+
+Protocol: Selenium 3 uses JSON Wire Protocol, while Selenium 4 adopts the W3C WebDriver Protocol for better standardization.
+
+Compatibility: Selenium 4 offers improved browser compatibility and support for modern web technologies.
+
+Performance: Selenium 4 enhances performance and future-proofs the framework with its standardized protocol.
+
+Selenium's architecture ensures efficient communication between test scripts, browser drivers, and browsers, making it a robust tool for web automation. The transition to the W3C WebDriver Protocol in Selenium 4 marks a significant step forward in improving compatibility and performance.
