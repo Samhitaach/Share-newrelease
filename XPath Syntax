@@ -1,0 +1,9 @@
+Select by attribute:
+
+//tagname[@attribute='value']
+Select by partial text:
+
+//*[contains(text(), 'partial')]
+Select using functions:
+
+//*[starts-with(@attribute, 'value')]
