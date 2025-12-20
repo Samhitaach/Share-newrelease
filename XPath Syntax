@@ -4,6 +4,61 @@ Select by attribute:
 Select by partial text:
 
 //*[contains(text(), 'partial')]
+
+//*[text()='Sample Text']
+
 Select using functions:
 
 //*[starts-with(@attribute, 'value')]
+
+<!DOCTYPE html>
+<html>
+<body>
+<div class="Animal" align="center">
+<h2>Animal</h2>
+	<div class="Vertebrate" align="left" >
+		<h3 align="left">Vertebrate</h3>
+		<div class="Fish" white-space=:pre>
+		<h4 >Fish</h4>
+		</div>
+		<div class="Mammal">
+		<h4>Mammal</h4>
+			<div class="Herbivore">
+				<h5>Herbivore</h5>
+			</div>
+			<div class="Carnivore">
+				<h5>Carnivore</h5>
+					<div class="Lion">
+						<h6>Lion</h6>
+					</div>
+					<div class="Tiger">
+						<h6>Tiger</h6>
+					</div>
+			</div>
+		</div>
+		<div class="Other">
+		<h4>Other</h4>
+		</div>
+	</div>
+	<div class="Invertebrate">
+		<h3>Invertebrate</h3>
+		<div class="Insect">
+		<h4>Insect</h4>
+		</div>
+		<div class="Crustacean">
+		<h4>Crustacean</h4>
+		</div>
+	</div>
+	
+</div>
+</body>
+</html>
+
+//div[@class='Mammal']/ancestor::div[@class='Animal']
+
+//div[@class=’Animal’]/parent::div
+
+//div[@class=’Mammal’]/self::div/h4
+
+//div[@class=’Mammal’]/child::div[@class=’Herbivore’]/h5
+
