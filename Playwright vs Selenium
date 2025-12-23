@@ -1,0 +1,9 @@
+Selenium uses the WebDriver protocol, which involves sending commands over HTTP (typically as JSON) to a browser-specific driver (e.g., ChromeDriver) that then controls the browser. 
+This introduces latency for each command due to the constant communication over a TCP connection per action.
+
+Selenium tends to be more resource-intensive per browser instance – it spawns a new browser process (and driver process) for each test session, 
+consuming more memory and CPU.
+Playwright can leverage browser contexts (isolated incognito sessions) within a single browser process to run multiple scenarios, 
+which is more memory-efficient and reduces the cost of spinning up new sessions.
+A test executed in ~290 ms with Playwright compared to ~536 ms with Selenium, indicating nearly half the execution time for the same task.
+
