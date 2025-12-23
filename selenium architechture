@@ -1,5 +1,5 @@
 Structure of Selenium
-1
+Webdriver,Client library, Browser library, Real browser
 Selenium is a widely used tool for automating web browsers. Its architecture is designed to provide flexibility, 
 scalability, and compatibility for test automation. 
 Selenium WebDriver, the core component, follows a client-server model and has evolved significantly from Selenium 3 to Selenium 4.
@@ -11,7 +11,7 @@ Selenium 3 Architecture
 The Selenium 3 WebDriver architecture uses the JSON Wire Protocol for communication between the client and the browser. 
 Here's how it works:
 
-Selenium Client Library: Provides language-specific bindings (e.g., Python, Java) to write test scripts.
+Selenium Client Library: Provides language-specific bindings (e.g., Python, Java, C#) to write test scripts.
 These scripts send commands to the WebDriver.
 
 JSON Wire Protocol: Converts commands into JSON format and sends them over HTTP to the browser driver.
