@@ -23,7 +23,7 @@ form filling, and navigation.
 
 Selenium 4 Architecture
 
-Selenium 4 introduces the W3C WebDriver Protocol, replacing the JSON Wire Protocol.
+Selenium 4 introduces the W3C (World Wide Web Consortium)standard WebDriver Protocol, replacing the JSON Wire Protocol.
 This change improves compatibility, stability, and performance across browsers.
 The key components remain similar but with enhanced functionality:
 
@@ -43,6 +43,18 @@ Compatibility: Selenium 4 offers improved browser compatibility and support for 
 
 Performance: Selenium 4 enhances performance and future-proofs the framework with its standardized protocol.
 
+Improved User Interface: It now has a more intuitive and responsive design. This goes a long way in making test development and execution easier.
+
+Advanced Scripting: It provides supports new locator strategies and offers better support for modern web applications, 
+created with frameworks such as Angular and React.
+
+Debugging and Diagnostic Features: Improved logging and screenshot capabilities also enhances the debugging process with these features.
+This set of features allows software testers to diagnose and fix problems more effectively, which helps them in reducing time in troubleshooting.
+
 Selenium's architecture ensures efficient communication between test scripts, browser drivers, and browsers, 
 making it a robust tool for web automation. The transition to the W3C WebDriver Protocol in Selenium 4
 marks a significant step forward in improving compatibility and performance.
+
+Cross-Browser Testing: This make sure, it’s aligned with the W3C standard, that automated tests will execute properly in all browsers.
+It reduces the effort that is needed in order to adapt tests on every browser.
+
