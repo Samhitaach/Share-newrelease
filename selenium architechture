@@ -4,6 +4,8 @@ Selenium is a widely used tool for automating web browsers. Its architecture is 
 scalability, and compatibility for test automation. 
 Selenium WebDriver, the core component, follows a client-server model and has evolved significantly from Selenium 3 to Selenium 4.
 
+language is not supported by Selenium is ASP.
+
 Selenium 3 Architecture
 
 The Selenium 3 WebDriver architecture uses the JSON Wire Protocol for communication between the client and the browser. 
