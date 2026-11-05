@@ -5,6 +5,7 @@ How to Fetch Employees Earning More Than the Average Salary
 To find employees with a salary greater than the average:
 
 sql
+For data enggineering avoid select *
 SELECT *
 FROM Employee
 WHERE Salary > (SELECT AVG(Salary) FROM Employee);
@@ -23,6 +24,16 @@ SELECT employees.name, departments.name
 FROM employees
 LEFT JOIN departments
 ON employees.department_id = departments.id;
+
+SELECT
+  customer_id,
+  order_date,
+  amount,
+  SUM(amount) OVER (
+    PARTITION BY customer_id
+    ORDER BY order_date
+  ) AS cumulative_by_customer
+FROM orders;
 
 SELECT employee_name, salary,
        ROW_NUMBER() OVER (ORDER BY salary DESC) AS row_num
