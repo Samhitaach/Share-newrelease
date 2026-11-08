@@ -54,3 +54,10 @@ SELECT employee_name, salary,
        RANK() OVER (ORDER BY salary DESC) AS rank_num
 FROM employees;
  tied salaries share the same rank, and the next rank skips accordingly (e.g., 1, 2, 2, 4).The  ties get same rank. Yes,Gaps in ranking since ranks after ties skip.
+
+FIND repeated order by customer 
+SELECT customer_id, order_id, item, COUNT(*) AS ordcount FROM Orders GROUP BY customer_id, item HAVING COUNT(*)>1 ORDER BY ordcount DESC; 
+
+Find the 2nd highest salary IN EACH department.
+SELECT first_name,last_name, country FROM (SELECT first_name,last_name, country, DENSE_RANK() OVER (PARTITION BY country ORDER BY AGE)AS rnk FROM
+ Customers) WHERE rnk = 2;
